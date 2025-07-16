@@ -1,0 +1,29 @@
+{
+  "name": "minurl",
+  "version": "1.0.0",
+  "description": "Url Shortner",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mahi014/Minurl-Url-Shortener.git"
+  },
+  "author": "Mahender Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mahi014/Minurl-Url-Shortener/issues"
+  },
+  "homepage": "https://github.com/Mahi014/Minurl-Url-Shortener#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "nanoid": "^5.1.5",
+    "pg": "^8.16.3"
+  }
+}
