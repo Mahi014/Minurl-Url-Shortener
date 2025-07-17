@@ -26,13 +26,13 @@ export const redirectUrl = async (req, res) => {
   try {
     const record = await getUrlByShortCode(shortCode);
     if (!record) {
-      return res.status(404).send("Short URL not found");
+      return res.status(404).json({ error: "Short URL not found" });
     }
     //tracking clicks
     await incrementClickCount(shortCode);
     return res.redirect(record.original_url);
   } catch (err) {
     console.error(err);
-    return res.status(500).send("Internal server error");
+    return res.status(500).json({ error: "Internal server error" });
   }
 };
