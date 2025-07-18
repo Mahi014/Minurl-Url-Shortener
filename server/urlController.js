@@ -26,7 +26,9 @@ export const redirectUrl = async (req, res) => {
   try {
     const record = await getUrlByShortCode(shortCode);
     if (!record) {
-      return res.status(404).json({ error: "Short URL not found" });
+      return res.status(404)
+        .type('text/plain')
+        .send(`This short URL does not exist. Visit myshorturl.com to create a new one.`);
     }
     //tracking clicks
     await incrementClickCount(shortCode);
