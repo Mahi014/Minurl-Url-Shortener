@@ -29,7 +29,7 @@ export const redirectUrl = async (req, res) => {
     if (!record) {
       return res.status(404)
         .type('text/plain')
-        .send(`This short URL does not exist. Visit myshorturl.com to create a new one.`);
+        .send(`This short URL does not exist. Visit minurl.mahender.me to create a new one.`);
     }
     //tracking clicks
     await incrementClickCount(shortCode);
