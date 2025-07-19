@@ -22,7 +22,6 @@ const MainCard = () => {
         },
         body: JSON.stringify({ original_url: urlToSend }),
       });
-
       const data = await res.json();
       setShortUrl(data.short_code || data.short_url || "");
       setCopied(false); 
