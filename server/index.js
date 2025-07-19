@@ -34,7 +34,7 @@ const createTableIfNotExists = async (retries = 5) => {
     } catch (err) {
       console.error("Failed to create table. Retrying...", err);
       retries -= 1;
-      await new Promise(res => setTimeout(res, 3000)); // Wait 3s
+      await new Promise(res => setTimeout(res, 3000)); 
     }
   }
 
