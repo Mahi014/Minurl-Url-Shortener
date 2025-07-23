@@ -24,7 +24,7 @@ const MainCard = () => {
       });
       const data = await res.json();
       setShortUrl(data.short_code || data.short_url || "");
-      setCopied(false); 
+      setCopied(false);
     } catch (err) {
       console.error("Error:", err);
     }
@@ -43,6 +43,16 @@ const MainCard = () => {
     <div>
       <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
         <div className="bg-white shadow-xl rounded-2xl p-8 max-w-md w-full">
+          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6 text-sm">
+            <strong>Note:</strong> This website is hosted on Render’s free tier.
+            <br />
+            When there is no traffic, both the frontend and backend servers go to sleep.
+            <br />
+            So, <span className="font-semibold">the first time you open the site or try to shorten a URL, it might take a few seconds</span> as the servers are waking up.
+            <br />
+            Once they're active, everything works quickly. Thank you for your patience. 😊
+          </div>
+
           <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">MinURL</h1>
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <input
@@ -84,7 +94,6 @@ const MainCard = () => {
           )}
         </div>
       </div>
-
       <Footer />
     </div>
   );
